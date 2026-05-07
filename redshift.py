@@ -11,10 +11,8 @@ df = pd.read_csv("galaxy_data.csv")
 # Features
 X = df[['u', 'g', 'r', 'i', 'z']]
 
-# Target
 y = df['redshift']
 
-# Split dataset
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
@@ -28,7 +26,7 @@ model = RandomForestRegressor()
 # Train model
 model.fit(X_train, y_train)
 
-# Predict
+# Predict the model
 predictions = model.predict(X_test)
 
 # Evaluate
